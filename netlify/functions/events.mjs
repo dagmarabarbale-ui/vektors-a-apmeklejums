@@ -39,7 +39,7 @@ export default async (req) => {
     const ev = {
       id: e.id, date: e.date, time: str(e.time, 40),
       kind: KINDS.includes(e.kind) ? e.kind : "Cits",
-      title: str(e.title, 200), place: str(e.place, 200), info: str(e.info, 5000),
+      title: str(e.title, 200), place: str(e.place, 200), bus: !!e.bus, info: str(e.info, 5000),
       program: e.program && typeof e.program.html === "string" && e.program.html
         ? { name: str(e.program.name, 200), html: str(e.program.html, 300000) } : null,
       dances: (Array.isArray(e.dances) ? e.dances : []).slice(0, 60)
